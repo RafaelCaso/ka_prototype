@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://000BG.png" type="Texture" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BattleFieldUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BattleLine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://KingArthur.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PlayerHQ.tscn" type="PackedScene" id=6]
+[ext_resource path="res://EnemyHQ.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SelectionBox.tscn" type="PackedScene" id=8]
+
+[node name="ProtoWorld" type="Node2D"]
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="KingArthur" parent="Player" instance=ExtResource( 5 )]
+position = Vector2( 422, 752 )
+
+[node name="BattleFieldUI" parent="." instance=ExtResource( 3 )]
+
+[node name="PlayerSpawnPoint" type="Position2D" parent="."]
+position = Vector2( 965, 1000 )
+
+[node name="BattleLine" parent="." instance=ExtResource( 4 )]
+position = Vector2( 960, 540 )
+
+[node name="PlayerHQ" parent="." instance=ExtResource( 6 )]
+position = Vector2( 964, 1000 )
+
+[node name="EnemyHQ" parent="." instance=ExtResource( 7 )]
+position = Vector2( 943, 39 )
+
+[node name="SelectionBox" parent="." instance=ExtResource( 8 )]
